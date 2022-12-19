@@ -1,0 +1,17 @@
+name: Sylver check
+
+on:
+  workflow_dispatch:
+      
+jobs:
+  runner-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Sylver check
+        uses: sylver-dev/sylver-gh-action@beta-1
+        with:
+          token: ${{ secrets.SYLVER_TOKEN }} 
+        
