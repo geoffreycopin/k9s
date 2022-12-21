@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Sylver check
-        uses: sylver-dev/sylver-gh-action@beta-4
+        uses: sylver-dev/sylver-gh-action@beta-5
         with:
           token: ${{ secrets.SYLVER_TOKEN }} 
         
