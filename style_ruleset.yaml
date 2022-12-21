@@ -1,0 +1,20 @@
+id: customStyleRules
+
+language: "https://github.com/sylver-dev/golang.git#golang.yaml"
+
+rules:
+    - id: largeStruct
+      message: struct has many fields
+      severity: warning
+
+      query: match StructType s when s.fields.children.length > 10 
+
+    - id: assignOp
+      message: assignment should use an assignment operator
+      severity: error
+      note: According to our style guide, assignment operators should be used whenever possible
+
+      query: >
+        match AssignStmt a when
+             a.lhs.children.length == 1
+          && a.rhs.children[0] is { BinOp b when b.left.text == a.lhs.children[0].text }  

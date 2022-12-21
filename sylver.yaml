@@ -1,0 +1,5 @@
+projects: 
+  - language: "https://github.com/sylver-dev/golang.git#golang.yaml"
+    rulesets: ['style_ruleset.yaml']
+    include:
+      - '**/*.go'
